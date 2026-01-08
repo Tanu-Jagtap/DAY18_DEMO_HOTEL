@@ -9,9 +9,9 @@ app.use(bodyparser.urlencoded({extended:true}));
 app.use(express.static("public/"));
 
 var conn = mysql.createConnection({
-    "host":"localhost",
-    "user":"root",
-    "password":"",
+    "host":"bw2lg6invrqnscgvq1kz-mysql.services.clever-cloud.com",
+    "user":"uqjqtc2a54mtlooj",
+    "password":"CfeONbGUbjd6ibWMIa0O",
     "database":"sandip_hotel"
 });
 
