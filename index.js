@@ -12,7 +12,7 @@ var conn = mysql.createConnection({
     "host":"bw2lg6invrqnscgvq1kz-mysql.services.clever-cloud.com",
     "user":"uqjqtc2a54mtlooj",
     "password":"CfeONbGUbjd6ibWMIa0O",
-    "database":"sandip_hotel"
+    "database":"bw2lg6invrqnscgvq1kz"
 });
 
 var exe = util.promisify(conn.query).bind(conn);
