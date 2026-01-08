@@ -1,0 +1,79 @@
+<%-include("navbar.ejs")%>;
+
+<form action="/save_bill" method="post">
+<div class="container border shadow p-3" style="background-color: lavender">
+    <div class="row">
+        <div class="col-md-12 mb-3">
+            <h3 style="text-shadow:3px 3px skyblue;">Create Bill</h3>
+        </div>
+        <div class="col-md-3">
+            Product Name 
+            <input type="text" name="product_name" class="form-control">
+        </div>
+        <div class="col-md-3 ">
+            Product Price
+            <input type="number" name="product_price" class="form-control" id="product_price" onkeyup="getTotal()">
+        </div>
+        <div class="col-md-3 ">
+            Product Quantity
+            <input type="number" name="product_qty" class="form-control" id="product_qty" onkeyup="getTotal()">
+        </div>
+        <div class="col-md-3">
+            Product Total
+            <input type="number" name="product_total" readonly class="form-control" id="product_total">
+        </div>
+        <div class="col-md-12 text-center"><br>
+            <button class="btn btn-primary">Save Bill</button>
+        </div>
+    </div>
+</div>
+</form>
+
+<div class="container p-3 mt-5 border shadow" style="background-color: lavender">
+    <div class="row">
+        <div class="col-md-12 mb-3">
+            <h3 style="text-shadow:3px 3px skyblue;">Bill History</h3>
+        </div>
+        <div class="col-md-12">
+            <table class="table">
+                <tr>
+                    <th>Action</th>
+                    <th>SR.NO</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>QTY</th>
+                    <th>Total</th>
+                </tr>
+                <% bills.map((row,i)=>{ %>
+                    <tr>
+                        <td></td>
+                        <td><%- i+1 %></td>
+                        <td><%- row.product_name %></td>
+                        <td>&#8377; <%- row.product_price %></td>
+                        <td><%- row.product_qty %> qty</td>
+                        <td>&#8377; <%- row.product_total %></td>
+                    </tr>
+                <% }) %>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    function getTotal()
+    {
+        var price = document.getElementById("product_price").value;
+        var qty = document.getElementById("product_qty").value;
+
+        var total = price * qty;
+        document.getElementById("product_total").value = total;
+    }
+</script>
+
+
+
+
+
+<%-include("footer.ejs") %>;

@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "express-fileupload": "^1.5.1",
+    "mysql": "^2.18.1"
+  },
+  "name": "day18_demo_hotel",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
